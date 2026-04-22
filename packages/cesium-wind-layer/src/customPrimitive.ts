@@ -13,7 +13,6 @@ import {
   ComputeCommand,
   Matrix4,
   BufferUsage,
-  defaultValue,
   destroyObject,
 } from 'cesium';
 
@@ -62,7 +61,7 @@ export default class CustomPrimitive {
     this.rawRenderState = options.rawRenderState;
     this.framebuffer = options.framebuffer;
     this.outputTexture = options.outputTexture;
-    this.autoClear = defaultValue(options.autoClear, false)
+    this.autoClear = options.autoClear ?? false;
     this.preExecute = options.preExecute;
 
     this.show = true;
