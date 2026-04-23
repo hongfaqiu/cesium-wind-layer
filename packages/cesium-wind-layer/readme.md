@@ -128,6 +128,35 @@ interface WindLayerOptions {
 | `isDestroyed(): boolean` | Check if the wind layer has been destroyed |
 | `destroy()` | Clean up resources and destroy the wind layer |
 
+## 🔧 Troubleshooting
+
+### `DeveloperError: Width must be less than or equal to the maximum texture size (0)`
+
+This error is caused by multiple versions of `@cesium/engine` being bundled simultaneously. It can happen when a version of `cesium` ships `@cesium/engine@X` but its internal `@cesium/widgets` package requires `@cesium/engine@X+1`, causing Vite to bundle both and create two separate `ContextLimits` singletons.
+
+**Fix for Vite users** — add the following to your `vite.config.ts`:
+
+```ts
+import path from 'path';
+import { realpathSync } from 'fs';
+
+const cesiumEngineAlias = path.resolve(
+  realpathSync(path.resolve(__dirname, 'node_modules/cesium')),
+  '../@cesium/engine'
+);
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@cesium/engine': cesiumEngineAlias,
+    },
+    dedupe: ['cesium', '@cesium/engine', '@cesium/widgets'],
+  },
+});
+```
+
+This forces all `@cesium/engine` imports — including those from `@cesium/widgets` — to resolve to the same physical instance that `cesium` itself uses.
+
 ## 🎥 Demo
 
 https://github.com/user-attachments/assets/64be8661-a080-4318-8b17-4931670570f1
