@@ -11,7 +11,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
     "antd": "^5.21.5",
-    "cesium": "1.129.0",
+    "cesium": "^1.136.0",
     "cesium-wind-layer": "workspace:*",
     "d3-scale-chromatic": "^3.1.0",
     "react": "^18.3.1",

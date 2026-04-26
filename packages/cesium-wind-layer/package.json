@@ -14,10 +14,10 @@
     "lint:fix": "eslint src --ext .ts,.tsx --fix"
   },
   "peerDependencies": {
-    "cesium": "*"
+    "cesium": "^1.136.0"
   },
   "devDependencies": {
-    "cesium": "^1.127.0",
+    "cesium": "^1.136.0",
     "tsup": "^8.0.2",
     "typescript": "^5.5.3"
   },

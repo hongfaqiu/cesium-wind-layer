@@ -48,7 +48,7 @@ const dataConfigs = {
       },
       speedFactor: 0.8,
       lineWidth: { min: 1, max: 2 },
-      lineLength: { min: 50, max: 100 },
+      lineLength: { min: 10, max: 100 },
       particleHeight: 100,
     },
     file: '/wind.json'
