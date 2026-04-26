@@ -1,5 +1,13 @@
 # example
 
+## 0.7.1
+
+### Patch Changes
+
+- e7808e9: Compatibility with recent Cesium releases
+- Updated dependencies [e7808e9]
+  - cesium-wind-layer@0.10.1
+
 ## 0.7.0
 
 ### Minor Changes

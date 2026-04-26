@@ -1,5 +1,11 @@
 # cesium-wind-layer
 
+## 0.10.1
+
+### Patch Changes
+
+- e7808e9: Compatibility with recent Cesium releases
+
 ## 0.10.0
 
 ### Minor Changes
