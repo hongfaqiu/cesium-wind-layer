@@ -17,6 +17,7 @@
     "cesium": "*"
   },
   "devDependencies": {
+    "cesium": "^1.127.0",
     "tsup": "^8.0.2",
     "typescript": "^5.5.3"
   },
